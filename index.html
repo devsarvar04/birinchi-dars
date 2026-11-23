@@ -1,78 +1,139 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uz">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Base Apparel - Coming Soon</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jamoa sayti</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <main class="container">
-        <div class="content-side">
-            <header class="header">
-                <div class="logo">
-                    <span class="logo-circle"></span>
-                    <span class="logo-text">BASE APPAREL</span>
-                </div>
-            </header>
 
-            <div class="mobile-image">
-                <img src="./img/qizcha.jpg" alt="Base Apparel Fashion model">
-            </div>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#" class="logo">JAMOA</a>
+      <nav class="nav">
+        <a href="#bosh">Bosh sahifa</a>
+        <a href="#xizmatlar">Xizmatlar</a>
+        <a href="#loyihalar">Loyihalar</a>
+        <a href="#jamoa">Jamoa</a>
+        <a href="#aloqa">Aloqa</a>
+      </nav>
+      <a href="#aloqa" class="btn">Kirish</a>
+    </div>
+  </header>
 
-            <section class="hero-section">
-                <h1>
-                    <span class="light-text">WE'RE</span>
-                    COMING SOON
-                </h1>
-
-                <p class="description">
-                    Hello fellow shoppers! We're currently building our new fashion store. Add your email below to stay up-to-date with announcements and our launch deals.
-                </p>
-
-                <form class="email-form" id="emailForm" onsubmit="event.preventDefault(); validateEmail();">
-                    <div class="input-wrapper">
-                        <input type="email" id="emailInput" placeholder="Email Address" required>
-                        <span class="error-icon" id="errorIcon" aria-hidden="true">!</span>
-                        <button type="submit" class="submit-btn" aria-label="Submit email">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="20" viewBox="0 0 12 20">
-                                <path fill="none" stroke="#FFF" stroke-width="2" d="M2 2l8 8-8 8"/>
-                            </svg>
-                        </button>
-                    </div>
-                    <p class="error-message" id="errorMessage">Please provide a valid email</p>
-                </form>
-            </section>
+  <main>
+    <section id="bosh" class="hero">
+      <div class="container">
+        <span class="badge">Zamonaviy veb-yechimlar</span>
+        <h1>G'oyangizni <span class="accent">sayt</span>ga aylantiramiz</h1>
+        <p>Jamoamiz tez, chiroyli va ishonchli veb-saytlar yaratadi. Birinchi maslahat bepul.</p>
+        <div class="hero-actions">
+          <a href="#aloqa" class="btn">Boshlash</a>
+          <a href="#loyihalar" class="btn btn-outline">Loyihalarni ko'rish</a>
         </div>
+      </div>
+    </section>
 
-        <div class="desktop-image">
-            <img src="./img/qizcha.jpg" alt="Base Apparel Fashion model">
+    <section id="xizmatlar" class="section">
+      <div class="container">
+        <h2 class="section-title">Xizmatlarimiz</h2>
+        <div class="cards">
+          <article class="card">
+            <h3>Landing sahifalar</h3>
+            <p>Mahsulotingiz uchun tez yuklanadigan, sotuvga yo'naltirilgan sahifa.</p>
+          </article>
+          <article class="card">
+            <h3>Korporativ saytlar</h3>
+            <p>Kompaniyangiz haqida to'liq va professional ma'lumot.</p>
+          </article>
+          <article class="card">
+            <h3>Mobil moslashuv</h3>
+            <p>Sayt telefon, planshet va kompyuterda bir xil yaxshi ishlaydi.</p>
+          </article>
         </div>
-    </main>
+      </div>
+    </section>
 
-    <script>
-        function validateEmail() {
-            const emailInput = document.getElementById('emailInput');
-            const errorIcon = document.getElementById('errorIcon');
-            const errorMessage = document.getElementById('errorMessage');
-            const email = emailInput.value.trim();
-            const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    <section id="loyihalar" class="section section-alt">
+      <div class="container">
+        <h2 class="section-title">Loyihalar</h2>
+        <div class="cards">
+          <article class="card">
+            <h3>Loyiha 1</h3>
+            <p>Qisqa tavsif. Bu yerga haqiqiy loyiha ma'lumotini yozing.</p>
+          </article>
+          <article class="card">
+            <h3>Loyiha 2</h3>
+            <p>Qisqa tavsif. Bu yerga haqiqiy loyiha ma'lumotini yozing.</p>
+          </article>
+          <article class="card">
+            <h3>Loyiha 3</h3>
+            <p>Qisqa tavsif. Bu yerga haqiqiy loyiha ma'lumotini yozing.</p>
+          </article>
+        </div>
+      </div>
+    </section>
 
-            if (re.test(email)) {
-                errorIcon.style.display = 'none';
-                errorMessage.style.display = 'none';
-                emailInput.style.borderColor = 'hsl(0, 36%, 70%)';
-                alert("Rahmat! Emailingiz muvaffaqiyatli qabul qilindi.");
-                emailInput.value = '';
-            } else {
-                errorIcon.style.display = 'block';
-                errorMessage.style.display = 'block';
-                emailInput.style.borderColor = 'hsl(0, 93%, 68%)';
-            }
-        }
-    </script>
+    <section id="jamoa" class="section">
+      <div class="container">
+        <h2 class="section-title">Jamoa</h2>
+        <div class="cards">
+          <article class="card team">
+            <div class="avatar">T</div>
+            <h3>Temur</h3>
+            <p>Loyiha egasi</p>
+          </article>
+          <article class="card team">
+            <div class="avatar">S</div>
+            <h3>Shoxnur</h3>
+            <p>Main qism</p>
+          </article>
+          <article class="card team">
+            <div class="avatar">M</div>
+            <h3>Jamoadosh</h3>
+            <p>Footer qismi</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="aloqa" class="section section-alt">
+      <div class="container contact">
+        <h2 class="section-title">Biz bilan bog'laning</h2>
+        <p>Email manzilingizni qoldiring, tez orada javob beramiz.</p>
+        <form class="contact-form" action="#" method="post">
+          <input type="email" placeholder="Email manzilingiz" required>
+          <button type="submit" class="btn">Yuborish</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <a href="#" class="logo">JAMOA</a>
+        <p>Zamonaviy veb-yechimlar va qulay raqamli tajriba.</p>
+      </div>
+      <div>
+        <h4>Sahifalar</h4>
+        <ul>
+          <li><a href="#bosh">Bosh sahifa</a></li>
+          <li><a href="#xizmatlar">Xizmatlar</a></li>
+          <li><a href="#loyihalar">Loyihalar</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Aloqa</h4>
+        <ul>
+          <li><a href="#jamoa">Jamoa</a></li>
+          <li><a href="#aloqa">Email yuborish</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2026 Jamoa. Barcha huquqlar himoyalangan.</div>
+  </footer>
+
 </body>
 </html>

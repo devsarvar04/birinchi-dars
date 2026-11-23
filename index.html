@@ -3,36 +3,76 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Base Apparel - Coming Soon</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-    <div class="head-section">
-        <header>
-            Base Apparel
-        </header>
+    <main class="container">
+        <div class="content-side">
+            <header class="header">
+                <div class="logo">
+                    <span class="logo-circle"></span>
+                    <span class="logo-text">BASE APPAREL</span>
+                </div>
+            </header>
 
-        <div class="hero-section">
-            <h1>
-                <span>we're</span>
-                coming soon
-            </h1>
-
-            <input type="email" placeholder="Enter your email address">
-
-            <p>
-                Hello fellow shoppers! We're currently building our new fashion store. Add your email below to stay up-to-date with announcements and our launch deals.
-            </p>
-
-            <div class="email-form">
-                <input type="password">
-                <button>></button>
+            <div class="mobile-image">
+                <img src="./img/qizcha.jpg" alt="Base Apparel Fashion model">
             </div>
-        </div>
-    </div>
 
-    <div class="image">
-        <img src="./img/qizcha.jpg" alt="Image 1">
-    </div>
+            <section class="hero-section">
+                <h1>
+                    <span class="light-text">WE'RE</span>
+                    COMING SOON
+                </h1>
+
+                <p class="description">
+                    Hello fellow shoppers! We're currently building our new fashion store. Add your email below to stay up-to-date with announcements and our launch deals.
+                </p>
+
+                <form class="email-form" id="emailForm" onsubmit="event.preventDefault(); validateEmail();">
+                    <div class="input-wrapper">
+                        <input type="email" id="emailInput" placeholder="Email Address" required>
+                        <span class="error-icon" id="errorIcon" aria-hidden="true">!</span>
+                        <button type="submit" class="submit-btn" aria-label="Submit email">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="20" viewBox="0 0 12 20">
+                                <path fill="none" stroke="#FFF" stroke-width="2" d="M2 2l8 8-8 8"/>
+                            </svg>
+                        </button>
+                    </div>
+                    <p class="error-message" id="errorMessage">Please provide a valid email</p>
+                </form>
+            </section>
+        </div>
+
+        <div class="desktop-image">
+            <img src="./img/qizcha.jpg" alt="Base Apparel Fashion model">
+        </div>
+    </main>
+
+    <script>
+        function validateEmail() {
+            const emailInput = document.getElementById('emailInput');
+            const errorIcon = document.getElementById('errorIcon');
+            const errorMessage = document.getElementById('errorMessage');
+            const email = emailInput.value.trim();
+            const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            if (re.test(email)) {
+                errorIcon.style.display = 'none';
+                errorMessage.style.display = 'none';
+                emailInput.style.borderColor = 'hsl(0, 36%, 70%)';
+                alert("Rahmat! Emailingiz muvaffaqiyatli qabul qilindi.");
+                emailInput.value = '';
+            } else {
+                errorIcon.style.display = 'block';
+                errorMessage.style.display = 'block';
+                emailInput.style.borderColor = 'hsl(0, 93%, 68%)';
+            }
+        }
+    </script>
 </body>
 </html>
